@@ -220,9 +220,6 @@
                             @php
                                 $begin = new DateTime($year."-".((int)$month-1)."-26");
 
-                                if((isset(Auth::user()->employeeStatus->start_date) && !empty(Auth::user()->employeeStatus->start_date)) && Auth::user()->employeeStatus->start_date > $begin->format('Y-m-d')){
-                                    $start_date = new DateTime(Auth::user()->employeeStatus->start_date);
-                                }
                                 $end   = new DateTime($year."-".(int)$month."-25");
                             @endphp
                             @for($i = $begin; $i <= $end; $i->modify('+1 day'))
@@ -246,7 +243,7 @@
                                         <td>
                                             @if($day!='Sat' && $day!='Sun')
                                                 <span class="punchedin d-block mb-2">{{$reponse['punchIn']}}</span>
-                                                @if($isCurrentTimeInRange && ($begin->format('Y-m-d') >= $start_date->format('Y-m-d')))
+                                                @if($isCurrentTimeInRange)
                                                     @if(empty($applied))
                                                         @php
                                                             $currentDate = date('Y-m-d'); // Current date in 'Y-m-d' format
@@ -352,7 +349,7 @@
                                                         @endif
                                                     @endif
                                                 @endif
-                                            @elseif(isset($user->employeeStatus->employmentStatus) && $user->employeeStatus->employmentStatus->name=='Permanent' && ($begin->format('Y-m-d') >= $start_date->format('Y-m-d')))
+                                            @elseif(isset($user->employeeStatus->employmentStatus) && $user->employeeStatus->employmentStatus->name=='Permanent')
                                                 @if(!empty($applied))
                                                     @if($applied->status==1)
                                                         <span class="badge bg-label-success" title="Approved: {{ date('d F Y h:i A', strtotime($applied->updated_at)) }}">Approved</span>

@@ -330,6 +330,13 @@
                                                                                     </a>
                                                                                 </td>
                                                                             @endif
+                                                                            @if(!empty(settings()->twitter_link))
+                                                                                <td style="padding:0 5px 0 5px;">
+                                                                                    <a href="{{ settings()->twitter_link }}" target="_blank">
+                                                                                        <img alt="{{ appName() }}" height="32" src="{{ asset('public/admin/email-temp-assets/twitter.png') }}" style="display: block; height: auto; border: 0;" title="{{ appName() }}" width="32" />
+                                                                                    </a>
+                                                                                </td>
+                                                                            @endif
                                                                         </tr>
                                                                     </table>
                                                                 </div>
