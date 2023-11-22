@@ -1,0 +1,31 @@
+<?php
+
+return [
+    "employee_salary_details-list",
+    "employee_leave_requests-list",
+    "employee_leave_requests-create",
+    "employee_leave_requests-edit",
+    "employee_leave_requests-delete",
+    "employee_leave_report-list",
+    "employee_attendance_daily_log-list",
+    "employee_discrepancies-list",
+    "employee_summary-list",
+    "employee_attendance_filter-list",
+    "bank_accounts-create",
+    "bank_accounts-edit",
+    "bank_accounts-status",
+    "vehicle_users-list",
+    "pre_employees-list",
+    "generate_pay_slip-create",
+    "insurances-create",
+    "insurances-edit",
+    "resignations-status",
+    "filter_summary-list",
+    "team_tickets-list",
+    "employee_all_letters-list",
+    "employee_resignations-list",
+    "manager_team_leaves-list",
+    "manager_team_discrepancies-list",
+    "manager_team_member-list",
+    "employee-show"
+];
