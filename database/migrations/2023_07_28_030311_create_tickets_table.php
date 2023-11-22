@@ -19,6 +19,8 @@ return new class extends Migration
             $table->string('subject')->nullable();
             $table->string('attachment')->nullable();
             $table->string('note')->nullable();
+            $table->timestamp('is_manager_approved')->nullable();
+            $table->timestamp('is_concerned_approved')->nullable();
             $table->integer('status')->default(0)->comment('0=pending, 1=approved by RA, 3=completed');
             $table->string('deleted_at')->nullable();
             $table->timestamps();
