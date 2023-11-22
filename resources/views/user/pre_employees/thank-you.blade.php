@@ -6,6 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Thank You </title>
 
+    @if(!empty(settings()))
+        <link rel="icon" type="image/x-icon" href="{{ asset('public/admin') }}/assets/img/favicon/{{ settings()->favicon }}" />
+    @else
+        <link rel="icon" type="image/x-icon" href="{{ asset('public/admin') }}/assets/img/favicon/favicon.ico" />
+    @endif
+
     <!-- bootstrap css -->
     <link rel="stylesheet" type="text/css" href="{{ asset('public/pre-employees/css/bootstrap.min.css') }}">
 
